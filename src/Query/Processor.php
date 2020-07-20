@@ -129,7 +129,7 @@ class Processor
 
             if (count($map) > 0) {
                 // Retrieve the model using the object class.
-                $model = $models[current($map)];
+                $model = array_change_key_case($models)[current($map)];
 
                 // Construct and return a new model.
                 return $this->newModel([], $model)
